@@ -1,0 +1,63 @@
+{
+	"name" : "laravel/laravel",
+	"description" : "The Laravel Framework.",
+	"keywords" : [
+		"framework",
+		"laravel"
+	],
+	"license" : "MIT",
+	"type" : "project",
+	"require" : {
+		"php" : "^7.1.3",
+		"algolia/algoliasearch-client-php" : "^1.27",
+		"devfactory/imagecache" : "3.0.*",
+		"fideloper/proxy" : "^4.0",
+		"laravel/cashier" : "~7.0",
+		"laravel/framework" : "5.6.*",
+		"laravel/horizon" : "^1.3",
+		"laravel/passport" : "^6.0",
+		"laravel/socialite" : "^3.0",
+		"laravel/tinker" : "^1.0",
+		"mcamara/laravel-localization" : "^1.3",
+		"silber/bouncer" : "v1.0.0-rc.1",
+		"torann/geoip" : "^1.0",
+		"twbs/bootstrap" : "4.1.3",
+		"twilio/sdk" : "^5.21"
+	},
+	"require-dev" : {
+		"filp/whoops" : "^2.0",
+		"fzaninotto/faker" : "^1.4",
+		"mockery/mockery" : "^1.0",
+		"nunomaduro/collision" : "^2.0",
+		"phpunit/phpunit" : "^7.0"
+	},
+	"autoload" : {
+		"classmap" : [
+			"database/seeds",
+			"database/factories"
+		],
+		"psr-4" : {
+			"App\\" : "app/"
+		}
+	},
+	"autoload-dev" : {
+		"psr-4" : {
+			"Tests\\" : "tests/"
+		}
+	},
+	"scripts" : {
+		"post-root-package-install" : "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
+		"post-create-project-cmd" : "@php artisan key:generate",
+		"post-autoload-dump" : [
+			"Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+			"@php artisan package:discover"
+		]
+	},
+	"config" : {
+		"preferred-install" : "dist",
+		"sort-packages" : true,
+		"optimize-autoloader" : true
+	},
+	"minimum-stability" : "dev",
+	"prefer-stable" : true
+}
