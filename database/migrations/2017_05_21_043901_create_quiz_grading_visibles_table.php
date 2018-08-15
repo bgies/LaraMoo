@@ -17,10 +17,10 @@ class CreateQuizGradingVisiblesTable extends Migration
        
        Schema::create('quiz_grading_visibles', function (Blueprint $table) {
           $table->increments('id');
-          $table->integer('gradingvisibility');
+          $table->integer('grading_visibility');
           $table->string('description');
           
-          $table->index(['gradingvisibility', 'id'], 'quiz_grading_visibles_visible_index');
+          $table->index(['grading_visibility', 'id'], 'quiz_grading_visibles_visible_index');
            
        });
     }

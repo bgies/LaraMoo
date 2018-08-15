@@ -15,9 +15,9 @@ class CreateUserTypesTable extends Migration
     {
         Schema::create('user_types', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('user_type_language', 5)->default('en');
             $table->integer('user_type_group');
             $table->string('user_type', 50);
-            $table->json('user_type_translations');
         });
     }
 

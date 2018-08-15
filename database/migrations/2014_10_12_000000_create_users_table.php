@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
 
-            $table->string('app_language', 5)->default('en');
+            $table->string('user_language', 5)->default('en');
             $table->integer('user_type', false, true)->default(101);
             
             $table->string('salutation', 10)->nullable();
@@ -35,8 +35,8 @@ class CreateUsersTable extends Migration
             $table->date('birthdate')->nullable();
             $table->dateTimeTz('last_login')->nullable();
             $table->dateTimeTz('last_location_time')->nullable();
-            $table->decimal('last_location_lat')->nullable();
-            $table->dateTime('last_location_lon')->nullable();
+            $table->decimal('last_location_lat', 9, 4)->nullable();
+            $table->decimal('last_location_lon', 9, 4)->nullable();
             
             $table->smallInteger('is_activated')->default(0);
             
@@ -62,6 +62,8 @@ class CreateUsersTable extends Migration
             $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
+            
+            $table->index(['phone'], 'users_phone_index');
             
         });
     }

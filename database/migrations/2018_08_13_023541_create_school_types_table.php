@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserTypeGroupsTable extends Migration
+class CreateSchoolTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateUserTypeGroupsTable extends Migration
      */
     public function up()
     {
-       Schema::dropIfExists('user_type_groups');
-       
-       Schema::create('user_type_groups', function (Blueprint $table) {
+        Schema::create('school_types', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('user_type_group_language', 5)->default('en');
-            $table->string('user_type_group', 50);
-
+            $table->string('school_type_language', 5)->default('en');
+            $table->string('school_type');
+            
             $table->softDeletes();
+            $table->timestamps();
         });
     }
 
@@ -31,6 +30,6 @@ class CreateUserTypeGroupsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_type_groups');
+        Schema::dropIfExists('school_types');
     }
 }

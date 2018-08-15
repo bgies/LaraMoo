@@ -19,13 +19,14 @@ class CreateCourseContentsTable extends Migration
           $table->increments('id');
           $table->integer('course_id');
           $table->integer('section_id');
-          $table->integer('sortorder');
+          $table->integer('sort_order');
           $table->text('content');
+          $table->json('course_content_options')->nullable();
           
           $table->softDeletes();
           $table->timestampsTz();
        
-          $table->index(['course_id', 'section_id', 'sortorder'], 'course_contents_course_section_index');
+          $table->index(['course_id', 'section_id', 'sort_order'], 'course_contents_course_section_index');
        
        });
            

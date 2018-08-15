@@ -18,10 +18,10 @@ class CreateQuizQuestionsTable extends Migration
        Schema::create('quiz_questions', function (Blueprint $table) {
           $table->increments('id');
           $table->integer('quiz_id');
-          $table->integer('sortorder');
-          $table->integer('questiontype');
+          $table->integer('sort_order');
+          $table->integer('question_type');
           
-          $table->integer('questioncount')->default(1);
+          $table->integer('question_count')->default(1);
           $table->json('question');
           $table->json('answers');
 

@@ -22,7 +22,7 @@ class CreateStaffsTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
 
-            $table->string('app_language', 5)->default('en');
+            $table->string('staff_language', 5)->default('en');
             $table->integer('user_type', false, true)->default(101);
             
             $table->string('salutation', 10)->nullable();
@@ -54,6 +54,8 @@ class CreateStaffsTable extends Migration
             $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
+            
+            $table->index(['phone'], 'staffs_phone_index');
             
         });
     }

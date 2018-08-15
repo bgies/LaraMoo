@@ -18,10 +18,11 @@ class CreateCourseFormatsTable extends Migration
        
        Schema::create('course_formats', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('format_language', 5)->default('en');
             $table->string('format', 25);
             $table->string('description', 255);
             
-            $table->index(['format', 'id'], 'course_formats_format_index');
+            $table->index(['format_language', 'format', 'id'], 'course_formats_format_index');
             
             
         });

@@ -15,21 +15,25 @@ class CreateCourseCategorysTable extends Migration
     {
         Schema::dropIfExists('course_categorys');
        
+/* 
+ * 
+ *        NO NEED FOR COURSE CATEGORYS USE TAGS INSTEAD
         Schema::create('course_categorys', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('categoryname', 255);
+            $table->string('category_language', 5)->default('en');
+            $table->string('category_name', 255);
             $table->mediumText('description');
-            $table->integer('categoryparent');
-            $table->integer('sortorder');
-            $table->integer('coursecount')->default(0);
-            $table->tinyInteger('visible')->default(0);
+            $table->integer('category_parent')->default(0);
+            $table->integer('sort_order');
+            $table->integer('course_count')->default(0);
+            $table->tinyInteger('visible')->default(1);
             
-            $table->timestampsTz();
+            $table->softDeletes();
             
-            $table->index(['categoryname', 'categoryparent', 'sortorder'], 'course_categorys_categoryname_index');
+            $table->index(['category_language', 'category_name', 'category_parent', 'sort_order'], 'course_categorys_categoryname_index');
             
         });
-        
+*/        
     }
 
     /**

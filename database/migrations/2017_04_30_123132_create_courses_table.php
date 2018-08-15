@@ -17,10 +17,11 @@ class CreateCoursesTable extends Migration
        
        Schema::create('courses', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('course_language', 5);
             $table->integer('category')->default(0);
-            $table->integer('sortorder')->default(0);
-            $table->string('fullname', 255);
-            $table->string('shortname', 255);
+            $table->integer('sort_order')->default(0);
+            $table->string('full_name', 255);
+            $table->string('short_name', 255);
             $table->string('idnumber', 100)->default('');
             $table->integer('freesections')->default(0);
             $table->mediumText('summary');
@@ -32,13 +33,14 @@ class CreateCoursesTable extends Migration
             $table->string('icon', 255)->default('');
             $table->tinyInteger('showreports')->default(0);
             $table->tinyInteger('visible')->default(0);
-            $table->string('lang', 10);
             $table->integer('theme')->default(0);
+            $table->json('course_options')->nullable();
             
+            $table->softDeletes();
             $table->timestampsTz();
             
-            $table->index(['fullname', 'visible'], 'courses_fullname_visible_index');
-            $table->index(['category', 'fullname'], 'courses_category_fullname_index');
+            $table->index(['course_language', 'full_name', 'visible'], 'courses_fullname_visible_index');
+            $table->index(['course_language', 'category', 'full_name'], 'courses_category_fullname_index');
             
         });
         

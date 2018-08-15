@@ -17,9 +17,10 @@ class CreateQuestionTypesTable extends Migration
        
        Schema::create('question_types', function (Blueprint $table) {
           $table->increments('id');
-          $table->string('questiontype', 64);
+          $table->string('question_type_language', 5);
+          $table->string('question_type', 64);
            
-          $table->index(['questiontype', 'id'], 'question_types_questiontype_index');
+          $table->index(['question_type_language', 'question_type', 'id'], 'question_types_questiontype_index');
            
        });
            

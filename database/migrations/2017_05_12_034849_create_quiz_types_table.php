@@ -14,15 +14,18 @@ class CreateQuizTypesTable extends Migration
     public function up()
     {
        Schema::dropIfExists('quiz_types');
-        
+/*        
+ * NO NEED FOR QUIZ TYPES DROP LATER
+ * 
        Schema::create('quiz_types', function (Blueprint $table) {
           $table->increments('id');
+          $table->string('quiz_language', 5)->default('en');
           $table->integer('quiztype');
            
           $table->index(['quiztype', 'id'], 'quiz_types_questiontype_index');
            
        });
-           
+*/           
     }
 
     /**
