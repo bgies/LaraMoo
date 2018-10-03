@@ -15,11 +15,9 @@ class CreateSchoolTypesTable extends Migration
     {
         Schema::create('school_types', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('school_type_language', 5)->default('en');
             $table->string('school_type');
             
             $table->softDeletes();
-            $table->timestamps();
         });
     }
 

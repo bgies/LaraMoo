@@ -8,8 +8,8 @@ use Mail;
 use Config;
 use Session;
 use Exception;
-use App\Models\User;
-use App\Models\UserMeta;
+use App\Models\User\User;
+use App\Models\User\UserMeta;
 
 use App\Models\Role;
 use App\Events\UserRegisteredEmail;

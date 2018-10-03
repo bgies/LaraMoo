@@ -20,15 +20,17 @@ class DatabaseSeeder extends Seeder
        $this->call(QuestionTypesTableSeeder::class);
        $this->call(UserTypesTableSeeder::class);
        
-       $this->call(BouncerSeeder::class);
+       
        
        // Then individual Tables
+       $this->call(UserTableSeeder::class);
        
-       
+       $this->call(BouncerSeeder::class);
        // NOW data specific to this Website
        // NOTE - This should not be included in open source
        
-       //$this->call(LaraMooTestDataTableSeeder::class);
+       
+       $this->call(LaraMooTestDataTableSeeder::class);
        
        
        

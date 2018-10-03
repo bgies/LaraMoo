@@ -19,7 +19,6 @@ class CreateTeacherTypesTable extends Migration
            $table->string('teacher_type');
            
            $table->softDeletes();
-           $table->timestamps();
         });
     }
 

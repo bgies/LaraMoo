@@ -17,7 +17,6 @@ class CreateUserTypeGroupsTable extends Migration
        
        Schema::create('user_type_groups', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('user_type_group_language', 5)->default('en');
             $table->string('user_type_group', 50);
 
             $table->softDeletes();

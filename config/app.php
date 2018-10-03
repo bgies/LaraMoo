@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => env('LARAMOO_DEFAULT_LOCALE', 'en'),
 
     /*
     |--------------------------------------------------------------------------
@@ -91,7 +91,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => env('LARAMOO_FALLBACK_LOCALE', 'en'),
 
     /*
     |--------------------------------------------------------------------------

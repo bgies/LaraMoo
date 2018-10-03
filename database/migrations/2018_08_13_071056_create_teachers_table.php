@@ -65,7 +65,7 @@ class CreateTeachersTable extends Migration
             $table->rememberToken();
             
             $table->index(['phone'], 'teachers_phone_index');
-            $table->index(['username', 'id'], 'teachers_username_index');
+            $table->index(['school_id', 'username', 'id'], 'teachers_username_index');
             $table->index(['teacher_language', 'id'], 'teachers_language_index');
         });
     }

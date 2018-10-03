@@ -50,7 +50,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ Auth::user()->username }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -65,6 +65,15 @@
                                     </form>
                                 </div>
                             </li>
+                            
+                            <li> Bouncer: {{ Bouncer::is(Auth::user())->a('web-staff') }}
+                            <li> {{ Auth::user()->user_type }} </li>
+                            @if ( Auth::user()->user_type === 1)
+                            	<li>    	Is Web Staff </li>
+                                
+                            @endif
+                            
+                            
                         @endguest
                     </ul>
                 </div>

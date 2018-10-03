@@ -53,6 +53,7 @@ class CreateUsersTable extends Migration
             $table->tinyInteger('account_type', false, true)->default(1);
             $table->integer('user_level', false, true)->default(0);
             $table->json('user_options')->nullable();
+            $table->json('user_abilities')->nullable();
             
             $table->string('stripe_id')->nullable();
             $table->string('card_brand')->nullable();

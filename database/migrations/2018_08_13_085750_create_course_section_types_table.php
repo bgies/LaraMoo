@@ -19,7 +19,6 @@ class CreateCourseSectionTypesTable extends Migration
            $table->string('course_section_type');
            
            $table->softDeletes();
-           $table->timestamps();
         });
     }
 

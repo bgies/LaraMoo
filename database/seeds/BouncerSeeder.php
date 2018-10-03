@@ -15,8 +15,8 @@ class BouncerSeeder extends Seeder
      */
     public function run()
     {
-       \DB::table('assigned_roles')->truncate();
-       \DB::table('abilities')->truncate();
+       //\DB::table('assigned_roles')->truncate();
+       //\DB::table('abilities')->truncate();
        
        
        // WEB STAFF

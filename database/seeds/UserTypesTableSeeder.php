@@ -17,20 +17,20 @@ class UserTypesTableSeeder extends Seeder
           [
              'id' => 1,
              'user_type_group' => 1,
-             'user_type_language' => 'en',
              'user_type' => 'Web Staff',
+             'user_type_translations' => '{}',
           ],
           [
              'id' => 2,
              'user_type_group' => 2,
-             'user_type_language' => 'en',
              'user_type' => 'School Staff',
+             'user_type_translations' => '{}',
           ],
           [
              'id' => 3,
              'user_type_group' => 3,
-             'user_type_language' => 'en',
              'user_type' => 'Member',
+             'user_type_translations' => '{}',
           ]
        ]);
 
